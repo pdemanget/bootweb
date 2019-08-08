@@ -1,0 +1,12 @@
+security:
+  user:
+    name: user # Default user name.
+    password: password
+    role: USER
+ # A comma separated list of roles
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+#      ddl-auto: validate
+logging.level.org.hibernate.tool.hbm2ddl: DEBUG
