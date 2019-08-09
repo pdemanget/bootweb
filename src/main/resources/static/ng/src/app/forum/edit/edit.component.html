@@ -1,1 +1,12 @@
 <p>edit works!</p>
+
+<div *ngIf="post | async as p">
+  <!-- {{(post | async)?.id}} -->
+  <h2>{{p.id}} {{p.title}}</h2>
+  <dl>
+    <dt>Text:</dt>
+    <dd>{{p.text}}</dd>
+
+  </dl>
+</div>
+
