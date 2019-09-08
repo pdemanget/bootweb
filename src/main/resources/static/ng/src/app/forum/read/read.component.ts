@@ -1,21 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { Post } from '../post';
-import { PostService } from '../post.service';
-import { Router, ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
-import { FormGroup, FormControl } from '@angular/forms';
+import { Post } from '../post';
+import { ActivatedRoute, Router } from '@angular/router';
+import { PostService } from '../post.service';
 
 @Component({
-  selector: 'app-edit',
-  templateUrl: './edit.component.html',
-  styleUrls: ['./edit.component.css']
+  selector: 'app-read',
+  templateUrl: './read.component.html',
+  styleUrls: ['./read.component.css']
 })
-export class EditComponent implements OnInit {
+export class ReadComponent implements OnInit {
   post: Observable<Post>;
-  postForm = new FormGroup({
-    title: new FormControl(''),
-    text: new FormControl(''),
-  });
 
   constructor(
     private route: ActivatedRoute,
@@ -27,6 +22,5 @@ export class EditComponent implements OnInit {
       let id = this.route.snapshot.paramMap.get('id');
       this.post = this.service.get( +id );
   }
-
 
 }
